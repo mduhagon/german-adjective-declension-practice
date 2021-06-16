@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/german-adjective-declension-practice/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/german-adjective-declension-practice/static/js/main.6c764c3d.chunk.js",
+    "main.js.map": "/german-adjective-declension-practice/static/js/main.6c764c3d.chunk.js.map",
+    "runtime-main.js": "/german-adjective-declension-practice/static/js/runtime-main.1c52eb68.js",
+    "runtime-main.js.map": "/german-adjective-declension-practice/static/js/runtime-main.1c52eb68.js.map",
+    "static/js/2.a5ef9f0d.chunk.js": "/german-adjective-declension-practice/static/js/2.a5ef9f0d.chunk.js",
+    "static/js/2.a5ef9f0d.chunk.js.map": "/german-adjective-declension-practice/static/js/2.a5ef9f0d.chunk.js.map",
+    "static/js/3.f3fe76cb.chunk.js": "/german-adjective-declension-practice/static/js/3.f3fe76cb.chunk.js",
+    "static/js/3.f3fe76cb.chunk.js.map": "/german-adjective-declension-practice/static/js/3.f3fe76cb.chunk.js.map",
+    "index.html": "/german-adjective-declension-practice/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/german-adjective-declension-practice/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.a5ef9f0d.chunk.js.LICENSE.txt": "/german-adjective-declension-practice/static/js/2.a5ef9f0d.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/german-adjective-declension-practice/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c52eb68.js",
+    "static/js/2.a5ef9f0d.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.6c764c3d.chunk.js"
+  ]
+}
