@@ -23,7 +23,7 @@ const articles_dict = {
     "dativ-definit-plural": "den",
     "dativ-indefinit-mask": "einem",
     "dativ-indefinit-fem": "einer",
-    "dativ-indefinit-neu": "eines",
+    "dativ-indefinit-neu": "einem",
     "dativ-indefinit-plural": "",
 
     "genitiv-definit-mask": "des",

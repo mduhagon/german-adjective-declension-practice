@@ -22,7 +22,8 @@ class App extends React.Component {
         resultAdjektive: null,
         manualResultAdjektive: null,
         resultNomen: null,
-        autocompleteAdjektive: true // when true if all vars are set the app will set the result artikel value
+        autocompleteAdjektive: true, // when true if all vars are set the app will set the result artikel value
+        showTranslation: true // when true, it will show the English translation of the random picked adjective and noun
     };
 
     this.adjektiveList = this.makeWeighted(adjective_store.adjectives);
@@ -105,6 +106,10 @@ class App extends React.Component {
     this.setState({autocompleteAdjektive: !this.state.autocompleteAdjektive});
   }
 
+  showTranslationChange() {
+    this.setState({showTranslation: !this.state.showTranslation});
+  }
+
   onCopyToClipboard() {
     let result = this.findResultArtikel() + " " + this.findResultAdjektiv() + " " + this.findResultNomen();
     navigator.clipboard.writeText(result);
@@ -152,6 +157,15 @@ class App extends React.Component {
     return parts[0];
   }
 
+  // This will get something like "aalglatt;slippery"
+  // so we want the second part, the English version of it
+  extractAdjektiveTranslation(oneElement) {
+    if (oneElement == null) return "";
+
+    let parts = oneElement.split(";");
+    return parts[1];
+  }
+
   // This will get something like "Time;Die Zeit;Die Zeiten"
   // so we want the middle part, the German version of it.
   // also, we will strip out the article
@@ -192,6 +206,15 @@ class App extends React.Component {
       default:
         throw new TypeError('Woah, was ist das? '+article);
     }
+  }
+
+  // This will get something like "Time;Die Zeit;Die Zeiten"
+  // so we want to take the first part
+  extractNomenTranslation(oneElement) {
+    if (oneElement == null) return null;
+
+    let parts = oneElement.split(";");
+    return parts[0];
   }
 
   // We get an array where each element is a string with ; separated values
@@ -271,6 +294,26 @@ class App extends React.Component {
     return (machineResult == this.state.manualResultAdjektive) ? "right" : "";
   }
 
+  findTranslation() {
+    let translationText = "";
+
+    if (!this.state.showTranslation) return "";
+
+    if (this.state.randomAdjektiv != null) {
+      translationText += this.extractAdjektiveTranslation(this.state.randomAdjektiv) + " / ";
+    } else {
+      translationText += "? / "; // translation unknown for the adjective part
+    }
+
+    if (this.state.randomNomen != null) {
+      translationText += this.extractNomenTranslation(this.state.randomNomen);
+    } else {
+      translationText += "?"; // translation unknown for the noun part
+    }
+
+    return translationText;
+  }
+
   // Main rendering block
 
   render() {
@@ -291,6 +334,7 @@ class App extends React.Component {
             <tr>
               <th><a href="#" className="randomGet" onClick={() => this.getRandomAdjektivClicked()}>[ get one! ]</a> ein Adjektiv:</th>
               <th><a href="#" className="randomGet" onClick={() => this.getRandomNomenClicked()}>[ get one! ]</a> ein Nomen:</th>
+              <th><input type="checkbox" onChange={() => this.showTranslationChange()} checked={this.state.showTranslation} /> Show me the translation</th>
             </tr>
             <tr>
               <td>
@@ -298,6 +342,9 @@ class App extends React.Component {
               </td> 
               <td>
                 <div contenteditable="true" className="input" onInput={e => this.onInputNomen(e.currentTarget.textContent)}>{ this.extractNomen(this.state.randomNomen) }</div>
+              </td>
+              <td>
+                <div className="translation">{ this.findTranslation() }</div>
               </td>
             </tr>
             <tr>
