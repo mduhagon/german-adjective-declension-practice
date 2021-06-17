@@ -126,7 +126,7 @@ class App extends React.Component {
     let kasus = this.getRandomFromArray(["nominativ", "akkusativ", "dativ"]); // I am not learning Genitiv yet :)
 
     // get random type of artikel
-    let artikel = this.getRandomFromArray(["definit", "indefinit", "ohne"]);
+    let artikel = this.getRandomFromArray(this.makeWeighted(["definit;2", "indefinit;2", "ohne;1"]));
 
     // get random singular / plural
     let newGenus = this.getRandomFromArray(this.makeWeighted([this.extractGenus(randomNomen)+";3", "plural;1"]));
