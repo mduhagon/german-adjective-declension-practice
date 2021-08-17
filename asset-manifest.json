@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/german-adjective-declension-practice/static/css/main.99b4aca2.chunk.css",
-    "main.js": "/german-adjective-declension-practice/static/js/main.56892cb3.chunk.js",
-    "main.js.map": "/german-adjective-declension-practice/static/js/main.56892cb3.chunk.js.map",
+    "main.css": "/german-adjective-declension-practice/static/css/main.fb876bf3.chunk.css",
+    "main.js": "/german-adjective-declension-practice/static/js/main.e34af27d.chunk.js",
+    "main.js.map": "/german-adjective-declension-practice/static/js/main.e34af27d.chunk.js.map",
     "runtime-main.js": "/german-adjective-declension-practice/static/js/runtime-main.31327a21.js",
     "runtime-main.js.map": "/german-adjective-declension-practice/static/js/runtime-main.31327a21.js.map",
     "static/js/2.0d04accd.chunk.js": "/german-adjective-declension-practice/static/js/2.0d04accd.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.59850b7b.chunk.js": "/german-adjective-declension-practice/static/js/3.59850b7b.chunk.js",
     "static/js/3.59850b7b.chunk.js.map": "/german-adjective-declension-practice/static/js/3.59850b7b.chunk.js.map",
     "index.html": "/german-adjective-declension-practice/index.html",
-    "static/css/main.99b4aca2.chunk.css.map": "/german-adjective-declension-practice/static/css/main.99b4aca2.chunk.css.map",
+    "static/css/main.fb876bf3.chunk.css.map": "/german-adjective-declension-practice/static/css/main.fb876bf3.chunk.css.map",
     "static/js/2.0d04accd.chunk.js.LICENSE.txt": "/german-adjective-declension-practice/static/js/2.0d04accd.chunk.js.LICENSE.txt",
     "static/media/copy_to_clipboard.8fb756b4.svg": "/german-adjective-declension-practice/static/media/copy_to_clipboard.8fb756b4.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.31327a21.js",
     "static/js/2.0d04accd.chunk.js",
-    "static/css/main.99b4aca2.chunk.css",
-    "static/js/main.56892cb3.chunk.js"
+    "static/css/main.fb876bf3.chunk.css",
+    "static/js/main.e34af27d.chunk.js"
   ]
 }
