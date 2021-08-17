@@ -47,6 +47,7 @@ class App extends React.Component {
   }
 
   onInputArtikel(manualArtikel) {
+    console.log('manualArtikel '+manualArtikel);
     this.setState({
       randomAdjektiv: null, //whatever random value was selected is cleared
       manualAdjektiv: manualArtikel
@@ -274,13 +275,15 @@ class App extends React.Component {
   }   
 
   findResultAdjektiv() {
+    console.log('findResultAdjektiv');
+
     let result = "";
 
     // If I wrote in something it takes priority to a random chosen one  
     let baseAdjektiv = (this.state.manualAdjektiv != null) ? this.state.manualAdjektiv : this.extractAdjektive(this.state.randomAdjektiv);
 
     // I think I am not contemplating ohne artikel right
-    if (this.state.randomAdjektiv != null && this.state.kasus != null && this.state.artikel != null && this.state.genus != null) {
+    if (baseAdjektiv != null && this.state.kasus != null && this.state.artikel != null && this.state.genus != null) {
       result = baseAdjektiv + this.adjectiveEndingsDict[this.state.kasus+"-"+this.state.artikel+"-"+this.state.genus];
     }
     
@@ -314,6 +317,17 @@ class App extends React.Component {
     return translationText;
   }
 
+  getApplicableEnding() {
+    let applicableEnding = 'unknown';
+
+    // I think I am not contemplating ohne artikel right
+    if (this.state.kasus != null && this.state.artikel != null && this.state.genus != null) {
+      applicableEnding = this.adjectiveEndingsDict[this.state.kasus+"-"+this.state.artikel+"-"+this.state.genus];
+    }
+
+    return applicableEnding;
+  }
+
   // Main rendering block
 
   render() {
@@ -322,11 +336,11 @@ class App extends React.Component {
         <header className="App-header">
           <h2>Possible endings</h2>
           <ul className="endings">
-                  <li>-e</li>
-                  <li>-en</li>
-                  <li>-es</li>
-                  <li>-er</li>
-                  <li>-em</li>
+                  <li className={(this.getApplicableEnding() == "e") ? "highlight" : ""}>-e</li>
+                  <li className={(this.getApplicableEnding() == "en") ? "highlight" : ""}>-en</li>
+                  <li className={(this.getApplicableEnding() == "es") ? "highlight" : ""}>-es</li>
+                  <li className={(this.getApplicableEnding() == "er") ? "highlight" : ""}>-er</li>
+                  <li className={(this.getApplicableEnding() == "em") ? "highlight" : ""}>-em</li>
           </ul>
           <hr className="separator"/>
           <h2>The variables</h2>

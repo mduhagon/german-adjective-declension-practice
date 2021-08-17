@@ -75,6 +75,10 @@ ul.endings {
   font-size: xx-large;
 }
 
+ul.endings li.highlight {
+  color: #ff0;
+}
+
 li {
   display: inline;
   margin-right: 0px;
